@@ -123,6 +123,7 @@ app.post("/verifyemail", (req, res) => {
 });
 
 app.get("/resetpassword", isAuth,(req, res) => {
+    var context = "Shakthi is angry! Sorry and thanks";
     res.render("resetpassword", { email: cur_email });
 });
 app.post("/resetpassword", isAuth,async(req, res) => {

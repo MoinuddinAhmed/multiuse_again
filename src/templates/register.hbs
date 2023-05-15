@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.108.0">
+    <title>Sign-up Template</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sign-in/">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+    <link href="/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/docs/5.3/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="/docs/5.3/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="/docs/5.3/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico">
+    <meta name="theme-color" content="#712cf9">
+    <script src="https://kit.fontawesome.com/9a5abf920d.js" crossorigin="anonymous"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+        /* Get rid of all default margins/paddings. Set typeface */
+        body {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            font-family: "lato", sans-serif;
+        }
+
+        p {
+            font-size: 20px;
+            margin-top: 5%;
+        }
+
+        span {
+            margin-left: 0.4rem;
+        }
+
+
+        .signupFrm {
+            height: 970px;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            flex-direction: column;
+
+        }
+
+        @media (max-width: 1340px) {
+            .signupFrm {
+                height: 640px;
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                align-items: center;
+                flex-direction: column;
+
+            }
+        }
+
+        .form {
+            background-color: white;
+            width: 400px;
+            border-radius: 8px;
+            padding: 20px 40px;
+            box-shadow: 0 10px 25px rgba(92, 99, 105, .2);
+        }
+
+        .title {
+            font-size: 30px;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .inputContainer {
+            position: relative;
+            height: 45px;
+            width: 90%;
+            margin-bottom: 17px;
+        }
+
+        /* Style the inputs */
+
+        .input {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            height: 100%;
+            width: 100%;
+            border: 1px solid #DADCE0;
+            border-radius: 7px;
+            font-size: 16px;
+            padding: 0 20px;
+            outline: none;
+            background: none;
+            z-index: 1;
+        }
+
+        /* Hide the placeholder texts (a) */
+
+        ::placeholder {
+            color: transparent;
+        }
+
+        .label {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            padding: 0 4px;
+            background-color: white;
+            color: #DADCE0;
+            font-size: 16px;
+            transition: 0.5s;
+            z-index: 0;
+        }
+
+        .submitBtn {
+            display: block;
+
+            padding: 15px 30px;
+            border: none;
+            background-color: purple;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 30px;
+            margin: auto;
+        }
+
+        .submitBtn:hover {
+            background-color: #9867C5;
+            transform: translateY(-2px);
+        }
+
+        .input:focus+.label {
+            top: -7px;
+            left: 3px;
+            z-index: 10;
+            font-size: 14px;
+            font-weight: 600;
+            color: purple;
+        }
+
+        .input:focus {
+            border: 2px solid purple;
+        }
+
+        .input:not(:placeholder-shown)+.label {
+            top: -7px;
+            left: 3px;
+            z-index: 10;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .invisible {
+            display: none;
+            visibility: hidden;
+        }
+
+        .visibility {
+            display: block;
+            visibility: visible;
+        }
+
+        .loginaccount {}
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    {{!--
+    <link href="css/styles.css" rel="stylesheet"> --}}
+
+    <script>
+        window.onload = function () {
+            if (document.getElementById("alert-message").innerHTML == "") {
+                document.getElementsByClassName("alert")[0].classList.remove("visibility");
+                document.getElementsByClassName("alert")[0].classList.add("invisible");
+            } else {
+                document.getElementsByClassName("alert")[0].classList.add("visibility");
+                document.getElementsByClassName("alert")[0].classList.remove("invisible");
+            }
+        }
+    </script>
+
+
+</head>
+
+<body style="overflow-y: hidden;">
+
+    <!-- <main class="form-signin w-50 m-auto">
+        <form method="post" action="/" style="FONT-WEIGHT: 500;margin-top: 50%;">
+            <h3>Sign up here!</h3>
+            <input type="text" id="fname" name="fname" placeholder="firstname" style="margin-top:2%"><br>
+            <input type="text" id="lname" name="lname" placeholder="Lastname" style="margin-top:2%"><br>
+            <input type="email" id="email" name="email" placeholder="Email" style="margin-top:2%"><br>
+            <input type="text" id="cityName" name="cityName" placeholder="City" style="margin-top:2%"><br>
+            <input type="password" id="password" name="password" placeholder="Password" style="margin-top:2%"><br>
+            <input type="submit" value="Submit" style="margin-top:2%">
+            <p>Already have account? <a href="/login">Click here</a></p>
+        </form>
+
+    </main> -->
+    <div class="alert alert-warning alert-dismissible fade show visibility" role="alert">
+        <strong id="alert-message">{{invalid_email}}{{invalid_password}}{{invalid_fname}}{{invalid_lname}}</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="signupFrm" style="">
+        <form action="/register" class="form" method="post">
+            <h1 class="title">Register Here!</h1>
+
+            <div class="inputContainer">
+                <input type="text" class="input" placeholder="First Name" id="fname" name="fname" autocomplete="off"
+                    required>
+                <label for="" class="label">First Name</label>
+            </div>
+
+            <div class="inputContainer">
+                <input type="text" class="input" placeholder="Last Name" id="lname" name="lname" autocomplete="off"
+                    required>
+                <label for="" class="label">Last Name</label>
+            </div>
+
+            <div class="inputContainer">
+                <input type="email" class="input" placeholder="Email" id="email" name="email" autocomplete="off"
+                    required>
+                <label for="" class="label">Email</label>
+            </div>
+
+            <div class="inputContainer">
+                <input type="password" class="input" id="password" name="password1" placeholder="Password"
+                    autocomplete="off" required>
+                <label for="" class="label">Password</label>
+            </div>
+
+            <i <i class="far fa-eye" id="togglePassword"
+                style="margin-left: -30px; cursor: pointer;position: relative;top: -55px;left: 167px;"></i>
+
+            <input type="submit" class="submitBtn" value="Sign up">
+
+        </form>
+        <p class="loginaccount">Already have account? <a href="/"><span>Login here!</span></a></p>
+    </div>
+
+    <script>
+        const togglePassword = document.querySelector('#togglePassword');
+        const password = document.querySelector('#password');
+
+        togglePassword.addEventListener('click', function (e) {
+            // toggle the type attribute
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            // toggle the eye / eye slash icon
+            this.classList.toggle('fa-eye-slash');
+        });
+    </script>
+
+</body>
+
+</html>
